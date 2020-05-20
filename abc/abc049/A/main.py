@@ -2,14 +2,7 @@
 import sys
 
 
-def solve(N: int, Y: int):
-    for i in range(N + 1):
-        for j in range(N - i + 1):
-            k = N - i - j
-            if 10000 * i + 5000 * j + 1000 * k == Y:
-                print(i, j, k)
-                return
-    print('-1 -1 -1')
+def solve(c: str):
     return
 
 
@@ -20,9 +13,8 @@ def main():
             for word in line.split():
                 yield word
     tokens = iterate_tokens()
-    N = int(next(tokens))  # type: int
-    Y = int(next(tokens))  # type: int
-    solve(N, Y)
+    c = next(tokens)  # type: str
+    solve(c)
 
 if __name__ == '__main__':
     main()
